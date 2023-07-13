@@ -40,13 +40,13 @@
     .card--wrapper.is-selected > .card {
         scale: 1.3;
         opacity: 1;
-        transition:scale ease-in 1s;
+        transition:scale ease-in 0.35s;
     }
     
     .card--wrapper > .card {
         scale: 0.85;
         opacity: 0.5;
-        transition:scale ease-in 1.1s;
+        transition:scale ease-in 0.25s;
     }
     
     .card--wrapper.is-selected {
