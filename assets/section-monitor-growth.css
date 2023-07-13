@@ -1,0 +1,5 @@
+.growth_main_image_container picture img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

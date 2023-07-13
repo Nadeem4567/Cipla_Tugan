@@ -1,0 +1,84 @@
+{{ 'section-monitor-growth.css' | asset_url | stylesheet_tag }}
+
+<div class="growth_section_main_container">
+  <div class="growth_main_container">
+    {% if section.settings.desktop_image != blank or section.settings.mobile_image != blank %}
+      <div class="growth_main_image_container">
+        {% assign mobile_image = section.settings.mobile_image | default: section.settings.desktop_image %}
+        {% render 'image-1', mobileSrc: mobile_image, desktopSrc: section.settings.desktop_image %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Monitor Growth",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "margin_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "rem",
+        "label": "Margin Top",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "margin_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "rem",
+        "label": "Margin Bottom",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 25
+      }, {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image",
+        "info": "Image for desktop."
+      }, {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image",
+        "info": "Image for mobile."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Monitor Growth"
+      }
+    ]
+  }
+{% endschema %}
+
+{% style %}
+  .growth_section_main_container {
+    margin-top: {{ section.settings.margin_top }}rem;
+    margin-bottom: {{ section.settings.margin_bottom }}rem;
+    background: #eee;
+  }
+{% endstyle %}

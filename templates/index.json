@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "1652199932491c01e1": {
+      "type": "images-with-text",
+      "settings": {
+        "enable_fullwidth": false,
+        "flip": true,
+        "style": "columns",
+        "spacing": "default",
+        "spacing_mobile": "compact",
+        "title": "Images with text",
+        "button_text": "Shop all",
+        "button_url": "shopify:\/\/collections",
+        "entry": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.",
+        "link_text": "Shop all",
+        "link_url": "shopify:\/\/collections",
+        "image_primary_link": "",
+        "product_ref": "",
+        "image_secondary_link": "",
+        "product_ref_secondary": "",
+        "enable_border": true
+      }
+    }
+  },
+  "order": [
+    "1652199932491c01e1"
+  ]
+}

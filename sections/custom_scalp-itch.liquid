@@ -1,0 +1,174 @@
+{{ 'section-scalp-itch.css' | asset_url | stylesheet_tag }}
+
+<div class="scalp_itch_main_container">
+  <div class="scalp_itch_container container">
+    {% if section.blocks.size > 0 %}
+      <div class="image_block_container">
+        {% for block in section.blocks %}
+          {% if block.settings.desktop_image != blank or block.settings.mobile_image != blank %}
+            <div class="image_block">
+              {% assign mobile_image = block.settings.mobile_image | default: block.settings.desktop_image %}
+              {% render 'image-1', class: '', mobileSrc: mobile_image, desktopSrc: block.settings.desktop_image %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="scalp_itch_content_container">
+      {% if section.settings.scalp_heading_text != blank %}
+        <h2 class="scalp_itch_heading {{ section.settings.text_alignment }}">
+          {{ section.settings.scalp_heading_text }}
+        </h2>
+      {% endif %}
+
+      <div class="scalp_itch_button_container {{ section.settings.content_alignment }}">
+        {%- if section.settings.button_text != blank -%}
+          {% assign button_url = section.settings.button_url | escape %}
+          {% assign button_label = section.settings.button_text | escape %}
+
+          {%- render 'button', type: 'link', href: button_url, styles: 'medium', class: 'scalp_itch_button', value: button_label -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Scalp Itch Section",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 25
+      },
+      {
+        "type": "text",
+        "id": "scalp_heading_text",
+        "label": "Heading Text",
+        "default": "Why Would My Scalp Itch?"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Try Now"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Link",
+        "default": "/collections"
+      }, {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }, {
+        "type": "select",
+        "id": "content_alignment",
+        "label": "Content Alignment",
+        "options": [
+          {
+            "value": "justify-left",
+            "label": "Left"
+          }, {
+            "value": "justify-center",
+            "label": "Center"
+          }, {
+            "value": "justify-right",
+            "label": "Right"
+          }
+        ],
+        "default": "justify-left"
+      }, {
+        "type": "range",
+        "id": "image_border_radius",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Image Rounded Size",
+        "default": 10
+      }, {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Button Rounded Size",
+        "default": 4
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Image Block",
+        "type": "image_block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image",
+            "info": "Image for desktop."
+          }, {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image",
+            "info": "Image for mobile."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scalp Itch Section"
+      }
+    ]
+  }
+{% endschema %}
+
+
+{% style %}
+  .scalp_itch_main_container {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  .image_block picture img {
+    border-radius: {{ section.settings.image_border_radius }}px;
+  }
+
+  .scalp_itch_button_container a {
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+{% endstyle %}

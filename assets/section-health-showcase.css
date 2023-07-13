@@ -1,0 +1,124 @@
+section{
+    background: none;
+}
+
+.health_supplement_conatiner {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.health_supplement_conatiner picture img {
+    max-height: 54rem;
+    max-width: 47rem;
+    box-shadow: 10px 10px transparent;
+}
+
+.health_supplement_heading {
+    margin-bottom: 0.3rem;
+    font-size: calc(var(--font-heading-scale) * 4rem);
+    font-weight: 800;
+}
+
+.health_supplement_description {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 990px) {
+    .health_supplement_conatiner picture img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .health_supplement_conatiner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .health_supplement_heading {
+        font-size: calc(var(--font-heading-scale) * 3.6rem);
+    }
+}
+
+.health_supplement_blocks {
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.health_supplement_block{
+    width: 25%;
+    margin: 0 1rem;
+    margin-left: 0;
+}
+
+.health_supplement_block_image_container {
+    position: relative;
+}
+
+.health_supplement_block_image_container picture img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 990px) {
+    .desktop_reverse {
+        order: -1;
+    }
+
+    .health_supplement_block_image_container picture img {
+        max-height: 32rem;
+    }
+}
+
+.health_supplement_block_button_main_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.2rem;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+}
+
+.health_supplement_block_button_container a {
+    height: 2.6rem !important;
+    font-size: 0.7rem;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 990px) {
+    .health_supplement_block{
+        width: 50%;
+    }
+
+    .health_supplement_content{
+        text-align: center;
+    }
+
+    .health_supplement_block_image_container picture img{
+        height: 100%;
+        max-height: 21.5rem;
+    }
+
+    .health_supplement_conatiner .flickity-button{
+        width: 2rem;
+        height: 2rem;
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .health_supplement_conatiner .flickity-viewport{
+        height: 300px;
+    }
+
+    .health_supplement_block_image_container picture img{
+        min-height: 34.1rem;
+    }
+}

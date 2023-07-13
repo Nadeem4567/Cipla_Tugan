@@ -1,0 +1,115 @@
+.blog_heading {
+    font-size: calc(var(--font-heading-scale) * 3.1rem);
+    font-weight: 800;
+    margin-bottom: 1.3rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .blog_heading {
+        font-size: calc(var(--font-heading-scale) * 2.5rem);
+    }
+}
+
+.blog_title {
+    font-size: calc(var(--font-heading-scale) * 2.9rem);
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 750px) {
+    .blog_title {
+        font-size: calc(var(--font-heading-scale) * 2.4rem);
+    }
+}
+
+.blog{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+}
+
+
+@media only screen and (min-width: 750px) {
+    .blog{
+        background: linear-gradient(-45deg, #D9FCEA 0%, #D9FCEA 15%, #D3FDFC 50% );
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .blog{
+        grid-template-columns: 1fr;
+    }
+}
+
+.blog_featured_image{
+    max-height: 30rem;
+}
+
+.blog_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 26rem;
+}
+
+@media only screen and (min-width: 750px) {
+    .blog_image img{
+        max-height: 30rem;
+    }
+}
+
+.blog_content{
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .blog_content {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background: linear-gradient(-45deg, #D9FCEA 0%, #D9FCEA 15%, #D3FDFC 50% );
+        margin-top: 0.05rem;
+    }
+}
+
+.blog_description {
+    font-size: calc(var(--font-heading-scale) * 1.4rem);
+}
+
+@media only screen and (max-width: 750px) {
+    .blog_description {
+        font-size: calc(var(--font-heading-scale) * 1.2rem);
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .hide_large {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .hide_small{
+        display: none;
+    }
+}
+
+.blog_main_container .flickity-button{
+    background: #000;
+    color: #ffff;
+    width: 2rem;
+    height: 2rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .blog_main_container .flickity-prev-next-button {
+        top: 27%;
+    }
+
+    .blog_description{
+        min-height: 19rem;
+        max-height: 19rem;
+    }
+}

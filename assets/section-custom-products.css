@@ -1,0 +1,109 @@
+.product_list_main_container{
+    background-color: #eee;
+}
+
+.custom_product_button_container a {
+    background: var(--color-buttons-primary);
+    color: var(--color-buttons-primary-text);
+}
+
+.product_list_main_container .custom_product_content_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom_product_heading {
+    font-size: calc(var(--font-heading-scale) * 3.2rem);
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 750px) {
+    .custom_product_heading {
+        font-size: calc(var(--font-heading-scale) * 3rem);
+    }
+}
+
+.custom_product_description {
+    font-size: calc(var(--font-heading-scale) * 1.5rem);
+    opacity: 0.7;
+}
+
+@media only screen and (min-width: 750px) and (max-width: 990px) {
+    .custom_product_card{
+        margin-right: 14rem;
+    }
+
+    .product_price{
+        font-size: 1rem;
+    }
+
+    .product_price_block .product_price_max{
+        font-size: 1rem;
+    }
+
+    .rating, .review_count{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .custom_product_description {
+        font-size: calc(var(--font-heading-scale) * 1.1rem);
+    }
+
+    .hide_small{
+        display: none;
+    }
+
+    .custom_product_content_block_content{
+        text-align: center;
+    }
+
+    .product_list_main_container .flickity-button{
+        display: none;
+    }
+}
+
+.product_image_container{
+    max-width: 25rem;
+    max-height: 20rem;
+}
+
+.product_card{
+    margin: 0 1rem;
+    margin-left: 0rem;
+}
+
+.custom_product_card{
+    width: 60vw;
+}
+
+.custom_product_card .add_to_cart_button{
+    font-size: 1.1rem;
+    padding: 1.45rem 6.5rem;
+}
+
+.custom_product_card .product_title{
+    font-size: calc(var(--font-heading-scale) * 1.4rem);
+}
+
+@media only screen and (min-width: 750px) {
+    .custom_product_products_container{
+        margin-left: 20rem;
+    }
+
+    .custom_product_card{
+        width: 28%;
+    }
+    
+    .product_image_container{
+        min-width: 25rem;
+        min-height: 25rem;
+    }
+
+    .product_list_main_container .flickity-button{
+        background: #fff;
+    }
+}
+

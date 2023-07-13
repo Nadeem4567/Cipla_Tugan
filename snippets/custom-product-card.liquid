@@ -1,0 +1,75 @@
+{{ 'custom-product-card.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-product-card.js' | asset_url }}" defer></script>
+
+<div class="product_card">
+  {% if product.featured_image != blank %}
+    <div class="product_image_container">
+      {% render 'image-1', class: 'product_image', mobileSrc: {{product.featured_image}}, desktopSrc: {{product.featured_image}} %}
+    </div>
+  {% endif %}
+
+  <a href="./products/{{ product.handle }}">
+    <span class="product_quick_view">{%- render 'icon-view' -%}</span>
+  </a>
+
+  {% if product.vendor != blank %}
+    <div class="product_vendor_name">{{ product.vendor }}</div>
+  {% endif %}
+
+  {% if product.title != blank %}
+    <div class="product_title">{{ product.title }}</div>
+  {% endif %}
+
+  {% if product.compare_at_price_max != blank or product.price != blank %}
+    <div class="product_price_block">
+      <span class="product_price">{{ product.price | money_with_currency }}</span>
+      <span class="product_price_max">
+        MRP:
+        <s>{{ product.compare_at_price_max | money_with_currency }}</s>
+      </span>
+    </div>
+  {% endif %}
+
+  <div class="product_review_block">
+    {% if product.review_stars != blank %}
+      {% else %}
+        <span class="review_stars">
+          {%- for i in (1..5) -%}
+            {%- unless i > 4 -%}
+              {%- render 'icon-yellow-star' -%}
+            {%- else -%}
+              {%- render 'icon-star-empty' -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        </span>
+    {% endif %}
+
+    {% if product.rating != blank %}
+      {% else %}
+        <span class="rating">4.3</span>
+    {% endif %}
+
+    {% if product.review_count != blank %}
+      {% else %}
+        <span class="review_count">(120)</span>
+    {% endif %}
+  </div>
+
+  <div
+    style='{{ jm_style }}'
+    class='jdgm-widget jdgm-preview-badge" data-
+                        id='
+    {{ product.id }}
+    '>
+    {{ product.metafields.judgeme.badge }}
+  </div>
+
+  <div class="product_add_to_cart_block">
+    <button
+      class="add_to_cart_button"
+      data-product-id="{{ product.selected_or_first_available_variant.id }}"
+      data-product-title="{{ product.title }}">
+      Buy Now
+    </button>
+  </div>
+</div>
