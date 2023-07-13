@@ -31,35 +31,47 @@
   {% endif %}
 
   <div class="product_review_block">
-    {% if product.review_stars != blank %}
-      {% else %}
+    {% assign starsCount = product.metafields.judgeme.all_reviews_rating | round: 1 %}
+    {% if starsCount != 0 %}
+      <div
+        style='{{ jm_style }}'
+        class="jdgm-widget jdgm-preview-badge"
+        data-id='{{ product.id }}'>
         <span class="review_stars">
-          {%- for i in (1..5) -%}
-            {%- unless i > 4 -%}
+          {%- for i in (1..starsCount) -%}
+            {%- unless i > starsCount -%}
               {%- render 'icon-yellow-star' -%}
             {%- else -%}
               {%- render 'icon-star-empty' -%}
             {%- endunless -%}
           {%- endfor -%}
         </span>
+        <span class="rating">{{ product.metafields.judgeme.all_reviews_rating | round: 1 }}</span>
+        <span class="review_count">({{ product.metafields.judgeme.all_reviews_count }})</span>
+      </div>
+
+    {% else %}
+      <span class="review_stars">
+        {%- for i in (1..5) -%}
+          {%- unless i > 4 -%}
+            {%- render 'icon-yellow-star' -%}
+          {%- else -%}
+            {%- render 'icon-star-empty' -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      </span>
+
+      {% if product.rating != blank %}
+        {% else %}
+          <span class="rating">4.3</span>
+      {% endif %}
+
+      {% if product.review_count != blank %}
+        {% else %}
+          <span class="review_count">(120)</span>
+      {% endif %}
     {% endif %}
 
-    {% if product.rating != blank %}
-      {% else %}
-        <span class="rating">4.3</span>
-    {% endif %}
-
-    {% if product.review_count != blank %}
-      {% else %}
-        <span class="review_count">(120)</span>
-    {% endif %}
-  </div>
-
-  <div
-    style='{{ jm_style }}'
-    class="jdgm-widget jdgm-preview-badge"
-    data-id='{{ product.id }}'>
-    {{ product.metafields.judgeme.badge }}
   </div>
 
   <div class="product_add_to_cart_block">
