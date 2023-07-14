@@ -4,10 +4,8 @@
   <script src="{{ 'component-announcement-bar.js' | asset_url }}" defer="defer"></script>
   {% style %}
     .announcement-bar {
-      --text-size: {{ section.settings.font_size_mobile | times: 0.1 }}
-      rem;
-      --text-size-desktop: {{ section.settings.font_size | times: 0.1 }}
-      rem;
+      --text-size: {{ section.settings.font_size_mobile | times: 0.1 }}rem;
+      --text-size-desktop: {{ section.settings.font_size | times: 0.1 }}rem;
       background: {{ section.settings.annoucement_bar_background }}
       ;
     }
