@@ -116,3 +116,14 @@ announcement-bar {
     text-decoration: underline;
   }
 }
+
+@media screen and (max-width: 750px){
+  .hide_block_on_mobile{
+    display: none;
+  }
+
+  .text_center_mobile{
+    display: flex;
+    justify-content: center;
+  }
+}

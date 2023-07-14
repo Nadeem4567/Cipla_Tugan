@@ -35,10 +35,10 @@
         {% endif %}
         data-interval="{{- section.settings.interval | times: 1000 -}}">
         <div class="announcement-bar__track splide__track">
-          <div class="announcement-bar__list splide__list">
+          <div class="announcement-bar__list splide__list text_center_mobile">
 
             {%- for block in section.blocks -%}
-              <div class="announcement-bar__content__list">
+              <div class="announcement-bar__content__list {% if forloop.index != 1 %} hide_block_on_mobile {% endif %}">
                 {%- if block.settings.title == blank -%}
                   {%- continue -%}
                 {%- endif -%}
