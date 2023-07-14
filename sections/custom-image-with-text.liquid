@@ -22,7 +22,7 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="text_image_container {% if section.settings.flip == true %} reverse_order {% endif %}">
+    <div class="text_image_container {% if section.settings.flip_desktop == true %} reverse_order_desktop {% endif %} {% if section.settings.flip_mobile == true %} reverse_order_mobile {% endif %}">
       {% if section.settings.desktop_image != blank or section.settings.mobile_image != blank %}
         {% assign mobile_image = section.settings.mobile_image | default: section.settings.desktop_image %}
         {% render 'image-1', class: 'text_image', mobileSrc: mobile_image, desktopSrc: section.settings.desktop_image %}
@@ -37,6 +37,10 @@
     "name": "Custom Image Text",
     "tag": "section",
     "settings": [
+      {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
       {
         "type": "range",
         "id": "padding_top",
@@ -59,11 +63,18 @@
       },
       {
         "type": "checkbox",
-        "id": "flip",
+        "id": "flip_desktop",
+        "label": "Flip Column Left/Right on Desktop",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "flip_mobile",
         "label": "Flip Column Left/Right on Mobile",
         "default": false
-      },
-      {
+      }, {
+        "type": "header",
+        "content": "MEDIA"
+      }, {
         "type": "image_picker",
         "id": "desktop_image",
         "label": "Desktop Image",
@@ -73,6 +84,9 @@
         "id": "mobile_image",
         "label": "Mobile Image",
         "info": "Image for mobile."
+      }, {
+        "type": "header",
+        "content": "TEXT CONTENT"
       }, {
         "type": "text",
         "id": "heading_text",
@@ -102,6 +116,9 @@
         "unit": "px",
         "label": "Border Radius",
         "default": 8
+      }, {
+        "type": "header",
+        "content": "ALINGMENT AND POSITIONS"
       }, {
         "type": "select",
         "id": "text_alignment",

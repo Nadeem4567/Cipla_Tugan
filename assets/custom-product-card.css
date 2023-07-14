@@ -77,13 +77,3 @@
         padding: 0.5rem 10rem !important;
     }
 }
-
-.product_image_container{
-    position: relative;
-}
-
-.product_quick_view{
-    position: absolute;
-    top: 5%;
-    left: 9%;
-}

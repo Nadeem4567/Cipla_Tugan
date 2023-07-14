@@ -44,6 +44,10 @@
     "tag": "section",
     "settings": [
       {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -64,12 +68,14 @@
         "default": 25
       },
       {
+        "type": "header",
+        "content": "TEXT CONTENT"
+      }, {
         "type": "text",
         "id": "heading_text",
         "label": "Heading Text",
         "default": "Our Top Pick"
-      },
-      {
+      }, {
         "type": "textarea",
         "id": "product_description",
         "label": "Product Description",
@@ -94,6 +100,9 @@
         "label": "Border Radius",
         "default": 4
       }, {
+        "type": "header",
+        "content": "PRODUCTS SELECTION"
+      }, {
         "type": "product_list",
         "id": "product_list",
         "label": "Products",
@@ -110,9 +119,7 @@
 
 {% style %}
   .product_list_main_container {
-    padding-top: {{ section.settings.padding_top }}
-    px;
-    padding-bottom: {{ section.settings.padding_bottom }}
-    px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 {% endstyle %}

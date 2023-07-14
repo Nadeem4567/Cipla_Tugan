@@ -41,6 +41,10 @@ section{
     .health_supplement_heading {
         font-size: calc(var(--font-heading-scale) * 3.6rem);
     }
+
+    .mobile_screen_reverse{
+        order: -1;
+    }
 }
 
 .health_supplement_blocks {

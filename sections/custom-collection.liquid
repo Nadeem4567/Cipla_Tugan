@@ -71,6 +71,10 @@
     "tag": "section",
     "settings": [
       {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -91,16 +95,21 @@
         "default": 25
       },
       {
+        "type": "header",
+        "content": "MEDIA"
+      }, {
         "type": "image_picker",
         "id": "desktop_image",
         "label": "Desktop Image",
         "info": "Image for desktop."
-      },
-      {
+      }, {
         "type": "image_picker",
         "id": "mobile_image",
         "label": "Mobile Image",
         "info": "Image for mobile."
+      }, {
+        "type": "header",
+        "content": "TEXT CONTENT"
       }, {
         "type": "text",
         "id": "heading_text",
@@ -128,8 +137,11 @@
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "Border Radius",
+        "label": "Button Rounding",
         "default": 4
+      }, {
+        "type": "header",
+        "content": "ALINGMENT AND POSITIONS"
       }, {
         "type": "range",
         "id": "block_border_radius",
@@ -164,15 +176,24 @@
         "type": "collection_block",
         "settings": [
           {
+            "type": "header",
+            "content": "MEDIA"
+          },
+          {
             "type": "image_picker",
             "id": "collection_block_desktop_image",
             "label": "Desktop Image",
             "info": "Collection Block Image for desktop."
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "collection_block_mobile_image",
             "label": "Mobile Image",
             "info": "Collection Block Image for mobile."
+          },
+          {
+            "type": "header",
+            "content": "TEXT CONTENT"
           }, {
             "type": "text",
             "id": "button_text",

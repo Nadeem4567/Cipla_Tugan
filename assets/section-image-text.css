@@ -5,6 +5,10 @@
     column-gap: 4rem;
 }
 
+.reverse_order_desktop{
+    order: -1;
+}
+
 @media only screen and (max-width: 990px) {
     .image_text_container {
         grid-template-columns: 1fr;
@@ -53,7 +57,7 @@
 }
 
 @media only screen and (max-width: 990px) {
-    .reverse_order{
+    .reverse_order_mobile{
         order: -1;
     }
 

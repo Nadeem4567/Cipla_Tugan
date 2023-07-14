@@ -40,6 +40,10 @@
     "tag": "section",
     "settings": [
       {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -64,8 +68,10 @@
         "id": "flip",
         "label": "t:sections.images_with_text.settings.flip.label",
         "default": false
-      },
-      {
+      }, {
+        "type": "header",
+        "content": "MEDIA"
+      }, {
         "type": "image_picker",
         "id": "desktop_image",
         "label": "Desktop Image",
@@ -75,6 +81,9 @@
         "id": "mobile_image",
         "label": "Mobile Image",
         "info": "Image for mobile."
+      }, {
+        "type": "header",
+        "content": "TEXT CONTENT"
       }, {
         "type": "text",
         "id": "banner_heading",
@@ -88,22 +97,22 @@
       }, {
         "type": "text",
         "id": "button_text_1",
-        "label": "Button 1 Text",
+        "label": "Primary Button Text",
         "default": "Buy Now"
       }, {
         "type": "url",
         "id": "button_url_1",
-        "label": "Button 1 Link",
+        "label": "Primary Button Link",
         "default": "/collections"
       }, {
         "type": "text",
         "id": "button_text_2",
-        "label": "Button 2 Text",
+        "label": "Secondary Button Text",
         "default": "Self Evaluation Test"
       }, {
         "type": "url",
         "id": "button_url_2",
-        "label": "Button 2 Link",
+        "label": "Secondary Button Link",
         "default": "/collections"
       }, {
         "type": "range",
@@ -112,7 +121,7 @@
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "Border Radius",
+        "label": "Button Rounding",
         "default": 8
       }
     ],

@@ -8,10 +8,6 @@
     </div>
   {% endif %}
 
-  <a href="./products/{{ product.handle }}">
-    <span class="product_quick_view">{%- render 'icon-view' -%}</span>
-  </a>
-
   {% if product.vendor != blank %}
     <div class="product_vendor_name">{{ product.vendor }}</div>
   {% endif %}

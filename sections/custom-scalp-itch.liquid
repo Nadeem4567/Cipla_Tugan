@@ -40,6 +40,10 @@
     "tag": "section",
     "settings": [
       {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -60,12 +64,14 @@
         "default": 25
       },
       {
+        "type": "header",
+        "content": "TEXT CONTENT"
+      }, {
         "type": "text",
         "id": "scalp_heading_text",
         "label": "Heading Text",
         "default": "Why Would My Scalp Itch?"
-      },
-      {
+      }, {
         "type": "text",
         "id": "button_text",
         "label": "Button Text",
@@ -75,6 +81,9 @@
         "id": "button_url",
         "label": "Button Link",
         "default": "/collections"
+      }, {
+        "type": "header",
+        "content": "ALINGMENT AND POSITIONS"
       }, {
         "type": "select",
         "id": "text_alignment",
@@ -116,7 +125,7 @@
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "Image Rounded Size",
+        "label": "Image Rounding",
         "default": 10
       }, {
         "type": "range",
@@ -125,7 +134,7 @@
         "max": 100,
         "step": 1,
         "unit": "px",
-        "label": "Button Rounded Size",
+        "label": "Button Rounding",
         "default": 4
       }
     ],
@@ -136,6 +145,9 @@
         "limit": 3,
         "settings": [
           {
+            "type": "header",
+            "content": "MEDIA"
+          }, {
             "type": "image_picker",
             "id": "desktop_image",
             "label": "Desktop Image",

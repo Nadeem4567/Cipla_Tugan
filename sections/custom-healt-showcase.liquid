@@ -8,7 +8,7 @@
         {% render 'image-1', mobileSrc: featured_mobile_image, desktopSrc: section.settings.featured_desktop_image %}
       </div>
     {% endif %}
-    <div class="health_supplement_content_container {% if section.settings.flip == true %} desktop_reverse {% endif %}">
+    <div class="health_supplement_content_container {% if section.settings.flip_mobile == true %} mobile_screen_reverse {% endif %} {% if section.settings.flip == true %} desktop_reverse {% endif %}">
       <div class="health_supplement_content">
         {% if section.settings.heading_text != blank %}
           <div class="health_supplement_heading">
@@ -55,6 +55,10 @@
     "tag": "section",
     "settings": [
       {
+        "type": "header",
+        "content": "SPACING AND ORDER"
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -79,8 +83,15 @@
         "id": "flip",
         "label": "t:sections.images_with_text.settings.flip.label",
         "default": false
-      },
-      {
+      }, {
+        "type": "checkbox",
+        "id": "flip_mobile",
+        "label": "Flip columns left/right on mobile",
+        "default": false
+      }, {
+        "type": "header",
+        "content": "MEDIA"
+      }, {
         "type": "image_picker",
         "id": "featured_desktop_image",
         "label": "Featured Desktop Image",
@@ -91,6 +102,9 @@
         "label": "Featured Mobile Image",
         "info": "Featured image for mobile."
       }, {
+        "type": "header",
+        "content": "TEXT CONTENT"
+      }, {
         "type": "text",
         "id": "heading_text",
         "label": "Heading Text",
@@ -100,6 +114,9 @@
         "id": "health_description",
         "label": "Health Description",
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \n eiusmod tempo"
+      }, {
+        "type": "header",
+        "content": "ALINGMENT AND POSITIONS"
       }, {
         "type": "select",
         "id": "content_position",
@@ -143,15 +160,24 @@
         "type": "health_supplement_block",
         "settings": [
           {
+            "type": "header",
+            "content": "MEDIA"
+          },
+          {
             "type": "image_picker",
             "id": "health_block_desktop_image",
             "label": "Desktop Image",
             "info": "Image for desktop."
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "health_block_mobile_image",
             "label": "Mobile Image",
             "info": "Image for mobile."
+          },
+          {
+            "type": "header",
+            "content": "TEXT CONTENT"
           }, {
             "type": "text",
             "id": "button_text",
@@ -176,19 +202,15 @@
 
 {% style %}
   .health_supplement_main_container {
-    padding-top: {{ section.settings.padding_top }}
-    px;
-    padding-bottom: {{ section.settings.padding_bottom }}
-    px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
   .health_supplement_block_image_container picture img {
-    border-radius: {{ section.settings.block_border_radius }}
-    px;
+    border-radius: {{ section.settings.block_border_radius }}px;
   }
 
   .health_supplement_block_button_container a {
-    border-radius: {{ section.settings.border_radius }}
-    px;
+    border-radius: {{ section.settings.border_radius }}px;
   }
 {% endstyle %}
