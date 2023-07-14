@@ -79,11 +79,6 @@
     width: 60vw;
 }
 
-.custom_product_card .add_to_cart_button{
-    font-size: 1.1rem;
-    padding: 1.45rem 6.5rem;
-}
-
 .custom_product_card .product_title{
     font-size: calc(var(--font-heading-scale) * 1.4rem);
 }
@@ -105,5 +100,9 @@
     .product_list_main_container .flickity-button{
         background: #fff;
     }
-}
 
+    .custom_product_card .add_to_cart_button{
+        font-size: 1.1rem;
+        padding: 1.45rem 6.5rem;
+    }
+}

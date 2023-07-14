@@ -139,11 +139,19 @@
         justify-content: center;
     }
 
-    .custom_collection_main_container .flickity-button{
+    .custom_collection_container .flickity-button{
         width: 2rem;
         height: 2rem;
         background-color: #000;
         color: #fff;
+    }
+
+    .custom_collection_container .next{
+        right: -1rem;
+    }
+
+    .custom_collection_container .previous{
+        left: -1rem;
     }
 }
 
@@ -151,10 +159,10 @@
     .custom_collection_container .flickity-viewport{
         height: 364.458px !important;
     }
+
+    .custom_collection_container .flickity-button{
+        background: #fff;
+        color: #b6b3b3;
+    }
 }
 
-
-.custom_collection_container .flickity-button{
-    background: #fff;
-    color: #b6b3b3;
-}
