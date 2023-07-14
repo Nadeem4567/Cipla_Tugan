@@ -1,3 +1,4 @@
+//footer accordion functionality for mobile screens
 if(window.innerWidth < 990){
     if(document.querySelector(".footer_contact_heading")){
         document.querySelector(".contact_heading .icon_plus").addEventListener('click', ()=>{
