@@ -1,3 +1,8 @@
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .footer {
   color: var(--color-footer-text);
   padding: 6.4rem 0 3.3rem;
@@ -6,6 +11,7 @@
 
 .icon_minus, .icon-plus{
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .footer__content {
@@ -259,6 +265,7 @@ summary.footer__title + * {
 
   .icon_minus{
     display: none;
+    cursor: pointer;
   }
 
   .contact_heading{

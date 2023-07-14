@@ -173,10 +173,10 @@
                   {{- block.settings.contact_text | escape -}}
                 </a>
                 <span class="icon_plus hide_on_desktop">
-                  {%- render 'icon-plus' -%}
+                  <a href="javascript:void(0)" onclick="event.preventDefault()">{%- render 'icon-plus' -%}</a>
                 </span>
                 <span class="icon_minus hide_on_desktop">
-                  {%- render 'icon-minus' -%}
+                  <a href="javascript:void(0)" onclick="event.preventDefault()">{%- render 'icon-minus' -%}</a>
                 </span>
               </div>
 
